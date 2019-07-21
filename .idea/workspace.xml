@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectFrameBounds">
+    <option name="x" value="20" />
+    <option name="y" value="43" />
+    <option name="width" value="1400" />
+    <option name="height" value="786" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ClientUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.web.client.ClientUI" />
+      <module name="COMP6231A3-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.web.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ClientUI" />
+      </list>
+    </recent_temporary>
+  </component>
+</project>
