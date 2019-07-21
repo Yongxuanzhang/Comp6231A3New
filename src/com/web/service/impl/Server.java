@@ -804,6 +804,14 @@ public class Server implements WebInterface{
   public int checkCounts(String customerID,String eventID) {
     
 	  String schedule=this.getBookingSchedule(customerID);
+	  
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+	  
 	  String scheduleList[]= schedule.split(" ");
     //LinkedList<String> userRecords = userSchedule.get(customerID);
     String month =  eventID.substring(6, 8);
@@ -819,8 +827,10 @@ public class Server implements WebInterface{
     		  continue;
     	  }
         System.out.println("temp is"+o);
-        if((!loc.equals(eventID.substring(0,3)))&&month.equals(o.substring(6, 8))&&year.equals(o.substring(8, 10))) {
+        if((!loc.equals(o.substring(0,3)))&&(!loc.equals(eventID.substring(0,3)))&&month.equals(o.substring(6, 8))&&year.equals(o.substring(8, 10))) {
         	//MTLE100519
+          System.out.println((!loc.equals(eventID.substring(0,3))));
+          System.out.println("check event is"+o);
           count++;
         }
       }
@@ -1307,16 +1317,20 @@ public class Server implements WebInterface{
 			boolean cancelRes=this.cancelEvent(oldEventID, oldEventType, customerID);
 			System.out.println("cancel res"+cancelRes);
 			
+			
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
+			
+			
 			booknew=this.bookEvent(customerID, newEventID, newEventType);
 			
 			if(booknew==1) {
 			//	System.out.println("after book in swap");
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			
 				//this.cancelEvent(oldEventID, oldEventType, customerID);
 				return 1;
 			}
