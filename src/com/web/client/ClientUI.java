@@ -357,6 +357,13 @@ public class ClientUI{
 	            eventType = sct.nextLine(); 
 	            System.out.println("Please Enter Booking Capacity:"); 
 	            bookingCapacity = sct.nextInt(); 
+	            
+	            if(bookingCapacity<1) {
+	            	
+	            	 System.out.println("You cannot add events with invalid capacity."); 
+	            	  userLog.logger.info(ID+" cannot add "+eventID);
+	            	return false;
+	            }
             
 	            if(!eventID.substring(0, 3).equals(location)) {
 	            	 //System.out.println(eventID.substring(0, 3)+" "+location); 

@@ -1312,6 +1312,15 @@ public class Server implements WebInterface{
 		//System.out.println("before swap");
 		//check if the user has booked this event;
 		int booknew=0;
+		
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
 		if(res==1) {
 			
 			boolean cancelRes=this.cancelEvent(oldEventID, oldEventType, customerID);
